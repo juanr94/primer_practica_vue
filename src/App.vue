@@ -1,26 +1,40 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Car></Car>
+  <h1>Nuestro primer component Vue JS</h1>
+  <EventosOptions/>
+  <hr/>
+  <EventosCompoitionApi :power="power" :correo="correo" :upPower="upPower"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import Car from './components/Car.vue'
+  import EventosOptions from './components/EventosOptions.vue'
+  import EventosCompoitionApi from './components/EventosCompoitionApi.vue'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  
+  export default{
+    components:{
+      Car,
+      EventosOptions,
+      EventosCompoitionApi
+    },
+    setup(){
+      let power = 50;
+      let correo = 'audi@gmail.com'
+      const upPower = () => {
+        console.log("Aumentar power...");
+        power++;
+      }
+
+      return {
+        power,
+        correo,
+        upPower,
+      }
+    }
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
