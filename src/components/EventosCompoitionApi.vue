@@ -1,6 +1,8 @@
 <template>
 
     <h1>Composition API</h1>
+    <h1>Primer H1 de prueba</h1>
+    <h1>Segundo H1 de prueba</h1>
     <h2>Coche - OPtion API</h2>
     <p>Marca: {{brand}}</p>
     <p>Modelo: {{model}}</p>
